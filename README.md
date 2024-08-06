@@ -42,7 +42,7 @@ Installing
 ```
 sudo apt-get update
 sudo apt-get install azure-cli
-``
+```
 
 ## Azure CLI Commands:
 
