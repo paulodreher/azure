@@ -12,7 +12,7 @@ There are two options as mentioned at [Install Azure CLI](https://learn.microsof
 standalone or apt package management. For security reasons, I'll follow apt.
 
 ```
-sudo apt-get update`
+sudo apt-get update
 sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
 ```
 
@@ -58,7 +58,7 @@ Needing more help?
 az vm --help
 ```
 
-Hum are not so confident? Don't worry, there is interactive mode. 
+Hum are you not so confident? Don't worry, there is interactive mode. 
 
 ```
 az interactive
