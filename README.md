@@ -73,7 +73,7 @@ az webapp list-runtimes --os linux
 Couldn't find what you need? Let me see ... you can run a container!
 
 [!NOTE]
-ACR Tasks is a suite of features within Azure Container Registry that provides streamlined and efficient Docker container image builds in Azure. In this article, you learn how to use the quick task feature of ACR Tasks.
+> ACR Tasks is a suite of features within Azure Container Registry that provides streamlined and efficient Docker container image builds in Azure. In this article, you learn how to use the quick task feature of ACR Tasks.
 
 1. Create a resource group
 
