@@ -159,6 +159,6 @@ az ad sp delete --id http://$ACR_NAME-pull
 ```
 
 More details at:
-[Learn Microsoft Azure](https://learn.microsoft.com/en-us/cli/azure/)
-[Creating containers](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-quick-task)
+- [Learn Microsoft Azure](https://learn.microsoft.com/en-us/cli/azure/)
+- [Creating containers](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-quick-task)
 
