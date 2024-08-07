@@ -44,7 +44,7 @@ sudo apt-get update
 sudo apt-get install azure-cli
 ```
 
-## Azure CLI Commands:
+### ***Azure CLI Commands***
 
 Searching for command related to vm
 
@@ -72,10 +72,13 @@ az webapp list-runtimes --os linux
 
 Couldn't find what you need? Let me see ... you can run a container!
 
+
+### ***Azure Container CLI***
+
 > [!NOTE]
 > ACR Tasks is a suite of features within Azure Container Registry that provides streamlined and efficient Docker container image builds in Azure. In this article, you learn how to use the quick task feature of ACR Tasks.
 
-1. Create a resource group
+Create a resource group
 
 ```
 RES_GROUP=$ACR_NAME # Resource Group name
@@ -84,13 +87,13 @@ az group create --resource-group $RES_GROUP --location eastus
 az acr create --resource-group $RES_GROUP --name $ACR_NAME --sku Standard --location eastus
 ```
 
-2. Build container image from a sample code. ACR tasks use docker build to build your images, no changes to your Dockerfiles are required to start using ACR Tasks immediately.
+Build container image from a sample code. ACR tasks use docker build to build your images, no changes to your Dockerfiles are required to start using ACR Tasks immediately.
 
 ```
 az acr build --registry $ACR_NAME --image helloacrtasks:v1 --file /path/to/Dockerfile /path/to/build/context.
 ```
 
-3. Create a Key Vault
+Create a Key Vault
 
 ```
 AKV_NAME=$ACR_NAME-vault
@@ -98,7 +101,7 @@ AKV_NAME=$ACR_NAME-vault
 az keyvault create --resource-group $RES_GROUP --name $AKV_NAME
 ```
 
-4. Create a service principal and store its credentials in your key vault.
+Create a service principal and store its credentials in your key vault.
 
 ```
 az keyvault secret set \
@@ -112,7 +115,7 @@ az keyvault secret set \
  --output tsv)
 ```
 
-5. Store the service principal's appi in the vault
+Store the service principal's appi in the vault
 
 ```
 # Store service principal ID in AKV (the registry *username*)
@@ -124,7 +127,7 @@ Two secrets have been stored in Azure Key Vault:
 - $ACR_NAME-pull-usr: The service principal ID, for use as the container registry username.
 - $ACR_NAME-pull-pwd: The service principal password, for use as the container registry password.
 
-6. Finally create your container!
+Finally create your container!
 
 ```
 az container create \
@@ -139,7 +142,7 @@ az container create \
  --output table
 ```
 
-7. Deployment status
+Deployment status
 
 ```
 az container attach --resource-group $RES_GROUP --name acr-tasks
@@ -158,7 +161,7 @@ az group delete --resource-group $RES_GROUP
 az ad sp delete --id http://$ACR_NAME-pull
 ```
 
-More details at:
+## **More details**
 - [Learn Microsoft Azure](https://learn.microsoft.com/en-us/cli/azure/)
 - [Creating containers](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-quick-task)
 
